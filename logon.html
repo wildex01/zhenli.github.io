@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+
+
+        <title>登陆界面</title>
+
+        
+        <style>
+
+            @font-face {
+                font-family: 'VONWAONBITMAP-12PXLITE';
+                src: 
+                    url('fonts/VonwaonBitmap-12pxLite.woff2') format('woff2'),
+                    url('fonts/VonwaonBitmap-12pxLite.woff') format('woff');
+                font-display: swap;
+                }
+
+            body {
+                background-color: #0A0E00; 
+                font-family: 'VonwaonBitmap-12pxLite', monospace;
+                line-height: 2;
+                background-image: url("ui/ui_background.png");
+                background-repeat: no-repeat;     /* 禁止重复 */
+                background-size: cover;          /* 覆盖整个容器 */
+                background-position: center;     /* 居中显示 */
+                background-attachment: fixed;    /* 固定背景 */
+                min-height: 100vh;              /* 确保高度填满视口 */
+            }
+            
+            /* 居中显示 */
+            .center-align {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+
+            }
+
+            /* 底部 */
+            .center-botton {
+                position: absolute;
+                top: 98%;
+
+            }
+
+            /* 重置默认边距 */
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+    
+            /* 设置根元素高度 */
+            html, body {
+                width: 100%;
+                height: 100%;
+                overflow: hidden; /* 隐藏滚动条 */
+            }
+    
+            /* 主容器 */
+            .container {
+                width: 1920px;
+                height: 1080px;
+                position: relative;
+                
+                /* 居中显示 */
+                margin: 0 auto;
+                /* 当屏幕小于 1920x1080 时自动缩放 */
+                transform-origin: 0 0;
+            }
+    
+            /* 内容样式示例 */
+            .content {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                font-size: 24px;
+                text-align: center;
+            }
+
+            .centered-image {
+                position: fixed;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                max-width: min(90vw, 1200px);
+                max-height: 90vh;
+                object-fit: contain;
+                image-rendering: crisp-edges;  /* 保持像素清晰 */
+                image-rendering: pixelated;
+                
+            }
+
+            .centered-image-logo {
+                position: absolute;
+                left: 50%;
+                top: 15%; 
+                transform: translateX(-50%);
+                max-width: min(90vw, 1200px);
+                max-height: 90vh;
+                object-fit: contain;
+                image-rendering: crisp-edges;
+                image-rendering: pixelated;
+            
+            }
+
+            .centered-box {
+                position: absolute;
+                left: 50%;               /* 水平定位起点 */
+                top: 58%;                /* 垂直定位起点 */
+                transform: translate(-50%, -50%);  /* 偏移补偿 */
+                }
+
+            .styled-text {
+                font-size: 24px;
+                color: #CCEA82; 
+                font-family: "VONWAONBITMAP-12PXLITE"
+            }
+
+            .login-container {
+                padding: 2.5rem;
+                width: 100%;
+                max-width: 400px;
+            }
+
+
+            .form-group {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                margin-bottom: 30px;
+                position: relative;
+            }
+
+            .form-label {
+                text-align: center;
+                display: block;
+                color: #CCEA82;
+                font-weight: 400;
+                font-size: 24px;
+            }
+
+            .input-wrapper {
+                position: relative;
+                width: fit-content; /* 自适应内容宽度 */
+                margin: 0 auto; /* 水平居中 */
+                }
+
+            .form-input {
+                image-rendering: pixelated;
+                -webkit-font-smoothing: none;
+                text-rendering: geometricPrecision;
+                text-align: center;
+                width: 320px;          /* 输入框宽度 */
+                height: 60px;          /* 输入框高度 */
+                border: none;          /* 移除默认边框 */
+                background: 
+                    url('ui/ui_input.png') no-repeat center/cover; /* 背景图片设置 */
+                outline: none;         /* 移除默认轮廓 */
+                font-size: 24px;       
+                color: #CCEA82; 
+                font-family: "VONWAONBITMAP-12PXLITE"
+                
+                
+                
+                }
+
+            .login-btn {
+                position: absolute;
+                left: 50%;               /* 水平定位起点 */
+                top: 90%;                /* 垂直定位起点 */
+                transform: translate(-50%, -50%);  /* 偏移补偿 */
+                width: 264px;       /* 按钮宽度 */
+                height: 117px;       /* 按钮高度 */
+                border: none;       /* 移除默认边框 */
+                background: 
+                    url('ui/ui_denglujiemian_logoff.png') no-repeat center/cover; /* 默认状态 */
+                cursor: pointer;    /* 手型指针 */
+                transition: all 0.3s ease; /* 过渡动画 */
+                image-rendering: crisp-edges;
+                image-rendering: pixelated;
+                }
+
+            .login-btn:hover {
+                background-image: url('ui/ui_denglujiemian_logon.png'); /* 悬停状态 */
+            }
+
+
+            @media (max-width: 480px) {
+                .login-container {
+                    margin: 1rem;
+                    padding: 1.5rem;
+                }
+            }
+
+
+</style>
+
+
+        </style>
+
+    </head>
+
+    <body>
+
+
+        <img 
+        src="ui/bianxian.gif"
+        class= "centered-image" 
+        >
+        
+        <img 
+        src="ui/ui_denglujiemian_zhenlizhongjiesuo.png"
+        class= "centered-image-logo" 
+        >
+
+        <p class="styled-text center-align center-botton">请不要泄露您的密码，最终解释权归真理中介所有。</p>
+
+        <div class="login-container centered-box">
+
+    
+            <form id="loginForm">
+                <div class="form-group">
+                    <label class="form-label">员工编号</label>
+                    <input 
+                        type="text" 
+                        color: #CCEA82
+                        class="form-input password-input" 
+                        required
+                    >
+                </div>
+    
+                <div class="form-group">
+                    <label class="form-label">账号密码</label>
+                    <input 
+                        type="password" 
+                        class="form-input password-input" 
+                        id="password"
+                        required
+                    >
+                </div>
+    
+                <button type="submit" class="login-btn"></button>
+            </form>
+    
+
+        </div>
+
+        <script>
+            function togglePassword() {
+                const passwordInput = document.getElementById('password');
+                const toggleIcon = document.querySelector('.password-toggle');
+                
+                if (passwordInput.type === 'password') {
+                    passwordInput.type = 'text';
+                    toggleIcon.textContent = '👁️';
+                } else {
+                    passwordInput.type = 'password';
+                    toggleIcon.textContent = '👁️';
+                }
+            }
+    
+            document.getElementById('loginForm').addEventListener('submit', (e) => {
+                e.preventDefault();
+                // 这里添加登录验证逻辑
+                console.log('表单已提交');
+            });
+        </script>
+
+
+      </body>
+
+
+</html>
