@@ -1,0 +1,23 @@
+@font-face {
+    font-family: 'VONWAONBITMAP-12PXLITE';  /* 自定义字体名称 */
+    src: 
+      url('../fonts/VonwaonBitmap-12pxLite.woff2') format('woff2'),  /* 优先加载 */
+      url('../fonts/VonwaonBitmap-12pxLite.woff') format('woff');     /* 兼容旧版 */
+    font-weight: 400;       /* 常规字重 */
+    font-style: normal;      /* 非斜体 */
+    font-display: swap;      /* 优化加载显示 */
+    unicode-range: U+000-5FF;  /* 仅加载所需字符 */
+  }
+
+  @font-face {
+    font-family: 'MyCustomFont';
+    src: url('../fonts/VonwaonBitmap-12pxLite.woff2') format('woff2');
+    font-weight: 700;        /* 加粗字重 */
+    font-display: swap;
+  }
+  
+
+  body {
+    font-family: 'VonwaonBitmap-12pxLite', Arial, sans-serif;
+  }
+  
